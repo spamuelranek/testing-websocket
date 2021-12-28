@@ -27,7 +27,7 @@ class ConnectionManager:
 
 manager = ConnectionManager()
 
-@app.get("/")
+@app.get("/test")
 async def get():
     return "Yo Dawg"
 
@@ -47,4 +47,9 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
         manager.disconnect(websocket)
 
         await manager.broadcast(f"Client #{client_id} left the chat")
+
+import uvicorn
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host="127.0.0.1", port = 8001, log_level = "info")
 
