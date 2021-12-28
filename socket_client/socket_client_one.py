@@ -29,4 +29,4 @@ async def gather(uri):
         )
 
 
-asyncio.run(gather("ws://test-for-truth.herokuapp.com/ws/smee"))
+asyncio.run(gather("ws://test-for-truth.herokuapp.com/test"))
